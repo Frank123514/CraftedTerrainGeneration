@@ -38,7 +38,7 @@ public record CTGAboveSurfaceCondition(int depth) implements SurfaceRules.Condit
         return new SurfaceRules.LazyYCondition(surfaceRuleContext) {
             @Override
             protected boolean compute() {
-                return elevation == -1 || this.context.blockY > elevation - CTGAboveSurfaceCondition.this.depth;
+                return elevation == -1 || this.context.blockY > elevation + CTGAboveSurfaceCondition.this.depth;
             }
         };
     }
